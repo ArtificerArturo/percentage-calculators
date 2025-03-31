@@ -1,5 +1,5 @@
 #percentPartCalculator {
-   max-width: 420px;
+   max-width: 350px;
    margin: 0 auto;
 }
 
@@ -15,6 +15,7 @@
 #percentPartCalculator input {
    padding: 10px;
    background-color: white;
+   border: solid 1px #cbcbcb;
    width: 40px;
 }
 #percentPartCalculator .calculate {
@@ -47,7 +48,7 @@
 }
 
 #percentWholeCalculator {
-   max-width: 420px;
+   max-width: 350px;
    margin: 0 auto;
 }
 
@@ -63,6 +64,7 @@
 #percentWholeCalculator input {
    padding: 10px;
    background-color: white;
+   border: solid 1px #cbcbcb;
    width: 40px;
 }
 #percentWholeCalculator .calculate {
@@ -95,7 +97,7 @@
 }
 
 #percentageCalculator {
-   max-width: 420px;
+   max-width: 350px;
    margin: 0 auto;
 }
 
@@ -111,6 +113,7 @@
 #percentageCalculator input {
    padding: 10px;
    background-color: white;
+   border: solid 1px #cbcbcb;
    width: 40px;
 }
 #percentageCalculator .calculate {
