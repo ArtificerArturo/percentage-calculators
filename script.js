@@ -6,7 +6,7 @@ function calculateFindPart() {
    let percent = percentInput.value
    let whole = wholeInput.value
    let result = whole / percent
-   resultElement.innerHTML = `${result}`
+   resultElement.innerHTML = `${resultConditioner(result)}`
 
    //input checking
 }
@@ -19,7 +19,7 @@ function calculateFindWhole() {
    let part = partInput.value
    let percent = percentInput.value
    let result = part / (percent / 100)
-   resultElement.innerHTML = `${result}`
+   resultElement.innerHTML = `${resultConditioner(result)}`
 }
 
 function calculateFindPercent() {
@@ -30,5 +30,21 @@ function calculateFindPercent() {
    let part = partInput.value
    let whole = wholeInput.value
    let result = (part / whole) * 100
-   resultElement.innerHTML = `${result}%`
+   resultElement.innerHTML = `${resultConditioner(result)}%`
+}
+
+function resultConditioner(number) {
+   //Intelligent rounding. Results with only decimal component need sig figs,
+   //results greater than 1 do not
+   if (number < 1 && number > -1) {
+      number = numberWithCommas(+number.toPrecision(2))
+   } else {
+      number = numberWithCommas(+number.toFixed(2))
+   }
+   return number
+}
+
+function numberWithCommas(number) {
+   //taken from SO. Worked better than .toLocaleString()
+   return number.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
 }
