@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Percentage Calculators</title>
+      <link rel="stylesheet" href="style.css" />
+   </head>
+
+   <body>
+      <script src="script.js" defer></script>
+
+      <div class="calculatorcontainer" id="percentPartCalculator">
+         <div class="background">
+            <div id="title">Find the Part</div>
+            <div class="calculatorGuts">
+               <div class="input">
+                  <input
+                     onkeyup="if (event.key === 'Enter') calculateFindPart()"
+                     id="percentInput"
+                     placeholder="Enter value"
+                     type="number"
+                  />% of
+               </div>
+               <div class="input">
+                  <input
+                     onkeyup="if (event.key === 'Enter') calculateFindPart()"
+                     id="wholeInput"
+                     placeholder="Enter value"
+                     type="number"
+                  />
+                  =
+               </div>
+               <div class="result"></div>
+            </div>
+            <div>
+               <button class="calculate" onclick="calculateFindPart()" data-uw-rm-kbnav="click">
+                  Calculate
+               </button>
+            </div>
+         </div>
+         <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
+            Found a bug?
+            <a
+               class="ylist"
+               href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=PercentPartCalculator&amp;hide_Calculator=true"
+               target="_blank"
+               rel="noopener"
+               >Let us know!</a
+            >
+         </div>
+      </div>
+      <div class="calculatorcontainer" id="percentWholeCalculator">
+         <div class="background">
+            <div id="title">Find the Whole</div>
+            <div class="calculatorGuts">
+               <div class="input">
+                  <input
+                     onkeyup="if (event.key === 'Enter') calculateFindWhole()"
+                     id="partInput"
+                     placeholder="Enter value"
+                     type="number"
+                  />
+                  is
+               </div>
+               <div class="input">
+                  <input
+                     onkeyup="if (event.key === 'Enter') calculateFindWhole()"
+                     id="percentInput"
+                     placeholder="Enter value"
+                     type="number"
+                  />
+                  % of
+               </div>
+               <div class="result"></div>
+            </div>
+            <div>
+               <button class="calculate" onclick="calculateFindWhole()" data-uw-rm-kbnav="click">
+                  Calculate
+               </button>
+            </div>
+         </div>
+         <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
+            Found a bug?
+            <a
+               class="ylist"
+               href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=PercentWholeCalculator&amp;hide_Calculator=true"
+               target="_blank"
+               rel="noopener"
+               >Let us know!</a
+            >
+         </div>
+      </div>
+      <div class="calculatorcontainer" id="percentageCalculator">
+         <div class="background">
+            <div id="title">Find the Percentage</div>
+            <div class="calculatorGuts">
+               <div class="input">
+                  <input
+                     onkeyup="if (event.key === 'Enter') calculateFindPercent()"
+                     id="partInput"
+                     placeholder="Enter value"
+                     type="number"
+                  />
+                  is
+               </div>
+               <div class="result">% of</div>
+               <div class="input">
+                  <input
+                     onkeyup="if (event.key === 'Enter') calculateFindPercent()"
+                     id="wholeInput"
+                     placeholder="Enter value"
+                     type="number"
+                  />
+               </div>
+            </div>
+            <div>
+               <button class="calculate" onclick="calculatePercent()" data-uw-rm-kbnav="click">
+                  Calculate
+               </button>
+            </div>
+         </div>
+         <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
+            Found a bug?
+            <a
+               class="ylist"
+               href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=PercentCalculator&amp;hide_Calculator=true"
+               target="_blank"
+               rel="noopener"
+               >Let us know!</a
+            >
+         </div>
+      </div>
+   </body>
+</html>
