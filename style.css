@@ -1,101 +1,3 @@
-#percentPartCalculator {
-   max-width: 350px;
-   margin: 0 auto;
-}
-
-#percentPartCalculator .background {
-   background-color: #fafafa;
-   padding: 20px;
-   border: solid 1px #cbcbcb;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 10px;
-}
-#percentPartCalculator input {
-   padding: 10px;
-   background-color: white;
-   border: solid 1px #cbcbcb;
-   width: 40px;
-}
-#percentPartCalculator .calculate {
-   background-color: #fc0;
-   color: #333;
-   font-weight: 700;
-   border-radius: 8px;
-   border: 1px solid #cbcbcb;
-   padding: 10px 20px;
-   display: inline-block;
-   transition: 0.1s;
-   text-decoration: none;
-}
-
-#percentPartCalculator .calculate:hover {
-   background-color: #666;
-   color: #fff;
-}
-
-#percentPartCalculator #bugLink {
-   font-size: medium;
-   padding: 10px;
-   text-align: left;
-}
-
-#percentPartCalculator .calculatorGuts {
-   display: flex;
-   align-items: center;
-   gap: 4px;
-}
-
-#percentWholeCalculator {
-   max-width: 350px;
-   margin: 0 auto;
-}
-
-#percentWholeCalculator .background {
-   background-color: #fafafa;
-   padding: 20px;
-   border: solid 1px #cbcbcb;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 10px;
-}
-#percentWholeCalculator input {
-   padding: 10px;
-   background-color: white;
-   border: solid 1px #cbcbcb;
-   width: 40px;
-}
-#percentWholeCalculator .calculate {
-   background-color: #fc0;
-   color: #333;
-   font-weight: 700;
-   border-radius: 8px;
-   border: 1px solid #cbcbcb;
-   padding: 10px 20px;
-   display: inline-block;
-   transition: 0.1s;
-   text-decoration: none;
-}
-
-#percentWholeCalculator .calculate:hover {
-   background-color: #666;
-   color: #fff;
-}
-
-#percentWholeCalculator #bugLink {
-   font-size: medium;
-   padding: 10px;
-   text-align: left;
-}
-
-#percentWholeCalculator .calculatorGuts {
-   display: flex;
-   align-items: center;
-   gap: 4px;
-}
-
 #percentageCalculator {
    max-width: 350px;
    margin: 0 auto;
@@ -110,12 +12,14 @@
    align-items: center;
    gap: 10px;
 }
+
 #percentageCalculator input {
    padding: 10px;
    background-color: white;
    border: solid 1px #cbcbcb;
    width: 40px;
 }
+
 #percentageCalculator .calculate {
    background-color: #fc0;
    color: #333;
@@ -139,8 +43,19 @@
    text-align: left;
 }
 
-#percentageCalculator .calculatorGuts {
+#percentageCalculator #inputFields {
    display: flex;
+   flex-direction: column;
+   gap: 4px;
+}
+
+#percentageCalculator label {
+   min-width: 50px;
+}
+
+#percentageCalculator .labelInputCombo {
+   display: flex;
+   justify-content: space-between;
    align-items: center;
    gap: 4px;
 }

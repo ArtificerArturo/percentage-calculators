@@ -1,36 +1,43 @@
-function calculateFindPart() {
-   const percentInput = document.querySelector("#percentPartCalculator #percentInput")
-   const wholeInput = document.querySelector("#percentPartCalculator #wholeInput")
-   const resultElement = document.querySelector("#percentPartCalculator .result")
-
-   let percent = percentInput.value
-   let whole = wholeInput.value
-   let result = whole / percent
-   resultElement.innerHTML = `${resultConditioner(result)}`
-
-   //input checking
-}
-
-function calculateFindWhole() {
-   const partInput = document.querySelector("#percentWholeCalculator #partInput")
-   const percentInput = document.querySelector("#percentWholeCalculator #percentInput")
-   const resultElement = document.querySelector("#percentWholeCalculator .result")
-
-   let part = partInput.value
-   let percent = percentInput.value
-   let result = part / (percent / 100)
-   resultElement.innerHTML = `${resultConditioner(result)}`
-}
-
-function calculateFindPercent() {
+function calculatePercent() {
    const partInput = document.querySelector("#percentageCalculator #partInput")
    const wholeInput = document.querySelector("#percentageCalculator #wholeInput")
+   const percentInput = document.querySelector("#percentageCalculator #percentInput")
    const resultElement = document.querySelector("#percentageCalculator .result")
 
-   let part = partInput.value
-   let whole = wholeInput.value
-   let result = (part / whole) * 100
-   resultElement.innerHTML = `${resultConditioner(result)}%`
+   let part = partInput?.value
+   let whole = wholeInput?.value
+   let percent = percentInput?.value
+   let result = 0
+   let numMissing = 0
+
+   if (part == "") numMissing++
+   if (whole == "") numMissing++
+   if (percent == "") numMissing++
+
+   resultElement.innerHTML = ""
+   resultElement.style.color = "black"
+
+   if (numMissing == 1) {
+      if (percent == "") {
+         result = (part / whole) * 100
+         resultElement.innerHTML = `${part} is ${resultConditioner(result)}% of ${whole}`
+      } else if (whole == "") {
+         result = part / (percent / 100)
+         resultElement.innerHTML = `${part} is ${percent}% of ${resultConditioner(result)}`
+      } else if (part == "") {
+         result = whole / percent
+         resultElement.innerHTML = `${resultConditioner(result)} is ${percent}% of ${whole}`
+      }
+      return
+
+   } else if (numMissing == 2) {
+      resultElement.innerHTML = "Please enter one more value."
+   } else if (numMissing == 3) {
+      resultElement.innerHTML = "Please enter two values."
+   } else if (numMissing == 0) {
+      resultElement.innerHTML = "Too many values entered. Please remove one."
+   }
+   resultElement.style.color = "red"
 }
 
 function resultConditioner(number) {
