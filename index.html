@@ -13,30 +13,39 @@
 
    <div class="calculatorcontainer" id="percentageCalculator">
       <div class="background">
-         <div id="title">Find the Missing Percent</div>
-         <div id="intro">Enter any two pieces of information and get the third calculated.</div>
+         <div id="title">Percentage Calculator</div>
+         <div id="intro">Enter any two values to <br>calculate the third.</div>
          <div id="inputFields">
             <div class="labelInputCombo">
-               <label for="partInput">part</label>
+               <label for="partInput">Part</label>
                <input onkeyup="if (event.key === 'Enter') calculatePercent()" id="partInput" placeholder="X"
                   type="number" />
             </div>
             <div class="labelInputCombo">
-               <label for="wholeInput">whole</label>
-               <input onkeyup="if (event.key === 'Enter') calculatePercent()" id="wholeInput" placeholder="Y"
+               <label for="percentInput">Percent</label>
+               <input onkeyup="if (event.key === 'Enter') calculatePercent()" id="percentInput" placeholder="Y"
                   type="number" />
             </div>
             <div class="labelInputCombo">
-               <label for="percentInput">percent</label>
-               <input onkeyup="if (event.key === 'Enter') calculatePercent()" id="percentInput" placeholder="Z"
+               <label for="wholeInput">Whole</label>
+               <input onkeyup="if (event.key === 'Enter') calculatePercent()" id="wholeInput" placeholder="Z"
                   type="number" />
             </div>
+
          </div>
-         <div class="result"></div>
-         <div>
-            <button class="calculate" onclick="calculatePercent()" data-uw-rm-kbnav="click">
-               Calculate
-            </button>
+         <div class="result">Example: X is Y% of Z</div>
+         <div class="buttonRow">
+            <!--<div class="voidFill"></div>-->
+            <div>
+               <button class="calculate" onclick="calculatePercent()" data-uw-rm-kbnav="click">
+                  Calculate
+               </button>
+            </div>
+            <div>
+               <button class="reset" onclick="clearForm()" data-uw-rm-kbnav="click">
+                  Reset
+               </button>
+            </div>
          </div>
       </div>
       <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">

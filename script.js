@@ -4,29 +4,31 @@ function calculatePercent() {
    const percentInput = document.querySelector("#percentageCalculator #percentInput")
    const resultElement = document.querySelector("#percentageCalculator .result")
 
-   let part = partInput?.value
-   let whole = wholeInput?.value
-   let percent = percentInput?.value
+   let part = parseFloat(partInput?.value)
+   let whole = parseFloat(wholeInput?.value)
+   let percent = parseFloat(percentInput?.value)
    let result = 0
    let numMissing = 0
 
-   if (part == "") numMissing++
-   if (whole == "") numMissing++
-   if (percent == "") numMissing++
+   console.log(part, whole, percent)
+
+   if (isNaN(part)) numMissing++
+   if (isNaN(whole)) numMissing++
+   if (isNaN(percent)) numMissing++
 
    resultElement.innerHTML = ""
    resultElement.style.color = "black"
 
    if (numMissing == 1) {
-      if (percent == "") {
+      if (isNaN(percent)) {
          result = (part / whole) * 100
-         resultElement.innerHTML = `${part} is ${resultConditioner(result)}% of ${whole}`
-      } else if (whole == "") {
+         resultElement.innerHTML = `${part} is <strong>${resultConditioner(result)}%</strong> of ${whole}`
+      } else if (isNaN(whole)) {
          result = part / (percent / 100)
-         resultElement.innerHTML = `${part} is ${percent}% of ${resultConditioner(result)}`
-      } else if (part == "") {
+         resultElement.innerHTML = `${part} is ${percent}% of <strong>${resultConditioner(result)}</strong>`
+      } else if (isNaN(part)) {
          result = whole / percent
-         resultElement.innerHTML = `${resultConditioner(result)} is ${percent}% of ${whole}`
+         resultElement.innerHTML = `<strong>${resultConditioner(result)}</strong> is ${percent}% of ${whole}`
       }
       return
 
@@ -40,8 +42,20 @@ function calculatePercent() {
    resultElement.style.color = "red"
 }
 
+function clearForm() {
+   const partInput = document.querySelector("#percentageCalculator #partInput")
+   const wholeInput = document.querySelector("#percentageCalculator #wholeInput")
+   const percentInput = document.querySelector("#percentageCalculator #percentInput")
+   const resultElement = document.querySelector("#percentageCalculator .result")
+
+   partInput.value = ""
+   wholeInput.value = ""
+   percentInput.value = ""
+   resultElement.innerHTML = "Example: X is Y% of Z"
+}
+
 function resultConditioner(number) {
-   //Intelligent rounding. Results with only decimal component need sig figs,
+   //Intelligent rounding. Results with only a decimal component need sig figs,
    //results greater than 1 do not
    if (number < 1 && number > -1) {
       number = numberWithCommas(+number.toPrecision(2))
