@@ -5,8 +5,14 @@
    font-size: 18px;
 }
 
+#percentageCalculator #title {
+   display: flex;
+   justify-content: center;
+}
+
 #percentageCalculator #intro {
-   color: #666
+   color: #666;
+   font-size: 14px;
 }
 
 #percentageCalculator .background {
@@ -23,11 +29,10 @@
    padding: 10px;
    background-color: white;
    border: solid 1px #cbcbcb;
-   width: 40px;
+   width: 65px;
 }
 
-#percentageCalculator .calculate,
-.reset {
+#percentageCalculator .calculate {
    background-color: #fc0;
    color: #333;
    font-weight: 700;
@@ -38,10 +43,19 @@
    font-size: 18px;
 }
 
-#percentageCalculator .calculate:hover,
-.reset:hover {
+#percentageCalculator .calculate:hover {
    background-color: #666;
    color: #fff;
+}
+
+#percentageCalculator .reset {
+   display: flex;
+   justify-content: center;
+}
+
+#percentageCalculator .reset button {
+   border: none;
+   background-color: #fafafa;
 }
 
 #percentageCalculator #bugLink {

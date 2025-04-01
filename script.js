@@ -51,6 +51,7 @@ function clearForm() {
    partInput.value = ""
    wholeInput.value = ""
    percentInput.value = ""
+   resultElement.style.color = "black"
    resultElement.innerHTML = "Example: X is Y% of Z"
 }
 
