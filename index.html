@@ -20,18 +20,15 @@
          <div id="inputFields">
             <div class="labelInputCombo">
                <label for="partInput">Part</label>
-               <input onkeyup="if (event.key === 'Enter') calculatePercent()" id="partInput" placeholder="X"
-                  type="number" />
+               <input onkeyup="calculatePercent(event)" id="partInput" placeholder="X" type="number" />
             </div>
             <div class="labelInputCombo">
                <label for="percentInput">Percent</label>
-               <input onkeyup="if (event.key === 'Enter') calculatePercent()" id="percentInput" placeholder="Y"
-                  type="number" />
+               <input onkeyup="calculatePercent(event)" id="percentInput" placeholder="Y" type="number" />
             </div>
             <div class="labelInputCombo">
                <label for="wholeInput">Whole</label>
-               <input onkeyup="if (event.key === 'Enter') calculatePercent()" id="wholeInput" placeholder="Z"
-                  type="number" />
+               <input onkeyup="calculatePercent(event)" id="wholeInput" placeholder="Z" type="number" />
             </div>
             <div class="reset">
                <button class="reset" onclick="clearForm()" data-uw-rm-kbnav="click">
@@ -41,7 +38,7 @@
          </div>
          <div class="result">X is Y% of Z</div>
          <div>
-            <button class="calculate" onclick="calculatePercent()" data-uw-rm-kbnav="click">
+            <button class="calculate" onclick="calculatePercent(event)" data-uw-rm-kbnav="click">
                Calculate
             </button>
          </div>

@@ -1,25 +1,64 @@
-function calculatePercent() {
+function calculatePercent(event) {
    const partInput = document.querySelector("#percentageCalculator #partInput")
-   const wholeInput = document.querySelector("#percentageCalculator #wholeInput")
    const percentInput = document.querySelector("#percentageCalculator #percentInput")
+   const wholeInput = document.querySelector("#percentageCalculator #wholeInput")
    const resultElement = document.querySelector("#percentageCalculator .result")
+   const calculateButton = document.querySelector("#percentageCalculator .calculate")
 
    let part = parseFloat(partInput?.value)
-   let whole = parseFloat(wholeInput?.value)
    let percent = parseFloat(percentInput?.value)
-   let result = 0
+   let whole = parseFloat(wholeInput?.value)
    let numMissing = 0
-
-   console.log(part, whole, percent)
+   let result = 0
 
    if (isNaN(part)) numMissing++
    if (isNaN(whole)) numMissing++
    if (isNaN(percent)) numMissing++
 
-   resultElement.innerHTML = ""
-   resultElement.style.color = "black"
+   //If they press enter or the calc button we want to check for and display errors. Otherwise, only run with valid input.
+   if ((event?.key === 'Enter') || (event?.target == calculateButton)) {
+      if (numMissing == 2) {
+         resultElement.innerHTML = "Please enter one more value."
+         resultElement.style.color = "red"
+         return
+      } else if (numMissing == 3) {
+         resultElement.innerHTML = "Please enter two values."
+         resultElement.style.color = "red"
+         return
+      } else if (numMissing == 0) {
+         resultElement.innerHTML = "Too many values entered."
+         resultElement.style.color = "red"
+         return
+      } else if (numMissing == 1) {
+         actuallyCalculate()
+      }
+      //If any other key is pressed. Intended for numeral input.
+   } else {
+      if (numMissing == 1) {
+         actuallyCalculate()
+      } else if (numMissing == 0) {
+         resultElement.innerHTML = "Too many values entered."
+         resultElement.style.color = "red"
+      }
+      else {
+         let X = ""
+         let Y = ""
+         let Z = ""
+         if (isNaN(part)) X = "X"
+         else X = part
+         if (isNaN(percent)) Y = "Y"
+         else Y = percent
+         if (isNaN(whole)) Z = "Z"
+         else Z = whole
+         resultElement.innerHTML = `${X} is ${Y}% of ${Z}`
+         resultElement.style.color = "black"
+         return
+      }
+   }
+   function actuallyCalculate() {
+      resultElement.innerHTML = ""
+      resultElement.style.color = "black"
 
-   if (numMissing == 1) {
       if (isNaN(percent)) {
          result = (part / whole) * 100
          resultElement.innerHTML = `${part} is <strong>${resultConditioner(result)}%</strong> of ${whole}`
@@ -30,16 +69,7 @@ function calculatePercent() {
          result = whole / percent
          resultElement.innerHTML = `<strong>${resultConditioner(result)}</strong> is ${percent}% of ${whole}`
       }
-      return
-
-   } else if (numMissing == 2) {
-      resultElement.innerHTML = "Please enter one more value."
-   } else if (numMissing == 3) {
-      resultElement.innerHTML = "Please enter two values."
-   } else if (numMissing == 0) {
-      resultElement.innerHTML = "Too many values entered. Please remove one."
    }
-   resultElement.style.color = "red"
 }
 
 function clearForm() {
@@ -52,7 +82,7 @@ function clearForm() {
    wholeInput.value = ""
    percentInput.value = ""
    resultElement.style.color = "black"
-   resultElement.innerHTML = "Example: X is Y% of Z"
+   resultElement.innerHTML = "X is Y% of Z"
 }
 
 function resultConditioner(number) {
