@@ -16,7 +16,7 @@ function calculatePercent(event) {
    if (isNaN(percent)) numMissing++
 
    //If they press enter or the calc button we want to check for and display errors. Otherwise, only run with valid input.
-   if ((event?.key === 'Enter') || (event?.target == calculateButton)) {
+   if (event?.key === "Enter" || event?.target == calculateButton) {
       if (numMissing == 2) {
          resultElement.innerHTML = "Please enter one more value."
          resultElement.style.color = "red"
@@ -39,8 +39,7 @@ function calculatePercent(event) {
       } else if (numMissing == 0) {
          resultElement.innerHTML = "Too many values entered."
          resultElement.style.color = "red"
-      }
-      else {
+      } else {
          let X = ""
          let Y = ""
          let Z = ""

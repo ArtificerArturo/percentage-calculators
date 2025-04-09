@@ -1,7 +1,8 @@
 #percentageCalculator {
    max-width: 400px;
    margin: 0 auto;
-   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
    font-size: 18px;
 }
 
@@ -56,6 +57,9 @@
 #percentageCalculator .reset button {
    border: none;
    background-color: #fafafa;
+   color: #000000;
+   padding: 0;
+   font-size: 13px;
 }
 
 #percentageCalculator #bugLink {
@@ -93,7 +97,7 @@
 #percentageCalculator a {
    text-decoration: underline;
    color: #000;
-   transition: color .1s ease-in-out, background-color .1s ease-in-out;
+   transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
    text-align: center;
    font-size: 90%;
 }
@@ -101,7 +105,7 @@
 #percentageCalculator a:hover {
    text-decoration-color: #fc0;
    -webkit-text-fill-color: #000;
-   -webkit-text-stroke-width: .5px;
+   -webkit-text-stroke-width: 0.5px;
    -webkit-text-stroke-color: #000;
    transition-timing-function: ease;
    transition-duration: 3s;
