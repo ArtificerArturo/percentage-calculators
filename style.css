@@ -144,3 +144,52 @@
    align-items: center;
    gap: 4px;
 }
+/* do not bring to wordpress below this line */
+#percentageCalculator a {
+   text-decoration: underline;
+   color: #000;
+   transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+   text-align: center;
+   font-size: 90%;
+}
+
+#percentageCalculator a:hover {
+   text-decoration-color: #fc0;
+   -webkit-text-fill-color: #000;
+   -webkit-text-stroke-width: 0.5px;
+   -webkit-text-stroke-color: #000;
+   transition-timing-function: ease;
+   transition-duration: 3s;
+}
+#percentWholeCalculator a {
+   text-decoration: underline;
+   color: #000;
+   transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+   text-align: center;
+   font-size: 90%;
+}
+
+#percentWholeCalculator a:hover {
+   text-decoration-color: #fc0;
+   -webkit-text-fill-color: #000;
+   -webkit-text-stroke-width: 0.5px;
+   -webkit-text-stroke-color: #000;
+   transition-timing-function: ease;
+   transition-duration: 3s;
+}
+#percentPartCalculator a {
+   text-decoration: underline;
+   color: #000;
+   transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+   text-align: center;
+   font-size: 90%;
+}
+
+#percentPartCalculator a:hover {
+   text-decoration-color: #fc0;
+   -webkit-text-fill-color: #000;
+   -webkit-text-stroke-width: 0.5px;
+   -webkit-text-stroke-color: #000;
+   transition-timing-function: ease;
+   transition-duration: 3s;
+}

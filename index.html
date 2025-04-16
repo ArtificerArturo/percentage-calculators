@@ -15,29 +15,14 @@
             <div id="title">Find the Part</div>
             <div class="calculatorGuts">
                <div class="input">
-                  <input
-                     onkeyup="if (event.key === 'Enter') calculateFindPart()"
-                     id="percentInput"
-                     placeholder="X"
-                     type="number"
-                  />
+                  <input onkeyup="calculateFindPart()" id="percentInput" placeholder="X" type="number" />
                   % of
                </div>
                <div class="input">
-                  <input
-                     onkeyup="if (event.key === 'Enter') calculateFindPart()"
-                     id="wholeInput"
-                     placeholder="Y"
-                     type="number"
-                  />
+                  <input onkeyup="calculateFindPart()" id="wholeInput" placeholder="Y" type="number" />
                   =
                </div>
                <div class="result">___</div>
-            </div>
-            <div>
-               <button class="calculate" onclick="calculateFindPart()" data-uw-rm-kbnav="click">
-                  Calculate
-               </button>
             </div>
          </div>
          <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
@@ -56,29 +41,14 @@
             <div id="title">Find the Whole</div>
             <div class="calculatorGuts">
                <div class="input">
-                  <input
-                     onkeyup="if (event.key === 'Enter') calculateFindWhole()"
-                     id="partInput"
-                     placeholder="X"
-                     type="number"
-                  />
+                  <input onkeyup="calculateFindWhole()" id="partInput" placeholder="X" type="number" />
                   is
                </div>
                <div class="input">
-                  <input
-                     onkeyup="if (event.key === 'Enter') calculateFindWhole()"
-                     id="percentInput"
-                     placeholder="Y"
-                     type="number"
-                  />
+                  <input onkeyup="calculateFindWhole()" id="percentInput" placeholder="Y" type="number" />
                   % of
                </div>
                <div class="result">___</div>
-            </div>
-            <div>
-               <button class="calculate" onclick="calculateFindWhole()" data-uw-rm-kbnav="click">
-                  Calculate
-               </button>
             </div>
          </div>
          <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
@@ -97,28 +67,13 @@
             <div id="title">Find the Percentage</div>
             <div class="calculatorGuts">
                <div class="input">
-                  <input
-                     onkeyup="if (event.key === 'Enter') calculateFindPercent()"
-                     id="partInput"
-                     placeholder="X"
-                     type="number"
-                  />
+                  <input onkeyup="calculateFindPercent()" id="partInput" placeholder="X" type="number" />
                   is
                </div>
                <div class="result">___% of</div>
                <div class="input">
-                  <input
-                     onkeyup="if (event.key === 'Enter') calculateFindPercent()"
-                     id="wholeInput"
-                     placeholder="Y"
-                     type="number"
-                  />
+                  <input onkeyup="calculateFindPercent()" id="wholeInput" placeholder="Y" type="number" />
                </div>
-            </div>
-            <div>
-               <button class="calculate" onclick="calculatePercent()" data-uw-rm-kbnav="click">
-                  Calculate
-               </button>
             </div>
          </div>
          <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">

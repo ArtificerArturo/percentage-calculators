@@ -6,9 +6,13 @@ function calculateFindPart() {
    let percent = percentInput.value
    let whole = wholeInput.value
    let result = whole / percent
-   resultElement.innerHTML = `${resultConditioner(result)}`
 
-   //input checking
+   if (isNaN(percent) || isNaN(whole)) {
+      resultElement.innerHTML = ""
+      return
+   }
+
+   resultElement.innerHTML = `${resultConditioner(result)}`
 }
 
 function calculateFindWhole() {
@@ -19,6 +23,12 @@ function calculateFindWhole() {
    let part = partInput.value
    let percent = percentInput.value
    let result = part / (percent / 100)
+
+   if (isNaN(percent) || isNaN(part)) {
+      resultElement.innerHTML = ""
+      return
+   }
+
    resultElement.innerHTML = `${resultConditioner(result)}`
 }
 
@@ -30,6 +40,12 @@ function calculateFindPercent() {
    let part = partInput.value
    let whole = wholeInput.value
    let result = (part / whole) * 100
+
+   if (isNaN(part) || isNaN(whole)) {
+      resultElement.innerHTML = ""
+      return
+   }
+
    resultElement.innerHTML = `${resultConditioner(result)}%`
 }
 
