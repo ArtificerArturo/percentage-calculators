@@ -1,6 +1,9 @@
 #percentPartCalculator {
-   max-width: 350px;
+   max-width: 440px;
    margin: 0 auto;
+   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-size: 18px;
 }
 
 #percentPartCalculator .background {
@@ -16,7 +19,7 @@
    padding: 10px;
    background-color: white;
    border: solid 1px #cbcbcb;
-   width: 40px;
+   width: 60px;
 }
 #percentPartCalculator .calculate {
    background-color: #fc0;
@@ -48,8 +51,11 @@
 }
 
 #percentWholeCalculator {
-   max-width: 350px;
+   max-width: 440px;
    margin: 0 auto;
+   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-size: 18px;
 }
 
 #percentWholeCalculator .background {
@@ -65,7 +71,7 @@
    padding: 10px;
    background-color: white;
    border: solid 1px #cbcbcb;
-   width: 40px;
+   width: 60px;
 }
 #percentWholeCalculator .calculate {
    background-color: #fc0;
@@ -97,8 +103,11 @@
 }
 
 #percentageCalculator {
-   max-width: 350px;
+   max-width: 440px;
    margin: 0 auto;
+   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+   font-size: 18px;
 }
 
 #percentageCalculator .background {
@@ -114,7 +123,7 @@
    padding: 10px;
    background-color: white;
    border: solid 1px #cbcbcb;
-   width: 40px;
+   width: 60px;
 }
 #percentageCalculator .calculate {
    background-color: #fc0;

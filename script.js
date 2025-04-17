@@ -1,52 +1,85 @@
 function calculateFindPart() {
    const percentInput = document.querySelector("#percentPartCalculator #percentInput")
    const wholeInput = document.querySelector("#percentPartCalculator #wholeInput")
-   const resultElement = document.querySelector("#percentPartCalculator .result")
+   const backgroundElement = document.querySelector("#percentPartCalculator .background")
 
-   let percent = percentInput.value
-   let whole = wholeInput.value
-   let result = whole / percent
+   let percent = parseFloat(percentInput.value)
+   let whole = parseFloat(wholeInput.value)
+   let result = whole * (percent / 100)
 
-   if (isNaN(percent) || isNaN(whole)) {
-      resultElement.innerHTML = ""
-      return
+   if (document.querySelector("#percentPartCalculator .result")) {
+      document.querySelector("#percentPartCalculator .result").remove()
    }
 
-   resultElement.innerHTML = `${resultConditioner(result)}`
+   if (isNaN(percent) || isNaN(whole)) return
+
+   let resultElement = document.createElement("div")
+   resultElement.setAttribute("class", "result")
+
+   if (isNaN(result)) {
+      resultElement.innerHTML = `Answer: <strong>Undefined</strong>.`
+   } else {
+      resultElement.innerHTML = `Answer: ${resultConditioner(percent)}% of ${resultConditioner(
+         whole
+      )} is <strong>${resultConditioner(result)}</strong>.`
+   }
+   backgroundElement.appendChild(resultElement)
 }
 
 function calculateFindWhole() {
    const partInput = document.querySelector("#percentWholeCalculator #partInput")
    const percentInput = document.querySelector("#percentWholeCalculator #percentInput")
-   const resultElement = document.querySelector("#percentWholeCalculator .result")
+   const backgroundElement = document.querySelector("#percentWholeCalculator .background")
 
-   let part = partInput.value
-   let percent = percentInput.value
+   let part = parseFloat(partInput.value)
+   let percent = parseFloat(percentInput.value)
    let result = part / (percent / 100)
 
-   if (isNaN(percent) || isNaN(part)) {
-      resultElement.innerHTML = ""
-      return
+   if (document.querySelector("#percentWholeCalculator .result")) {
+      document.querySelector("#percentWholeCalculator .result").remove()
    }
 
-   resultElement.innerHTML = `${resultConditioner(result)}`
+   if (isNaN(percent) || isNaN(part)) return
+
+   let resultElement = document.createElement("div")
+   resultElement.setAttribute("class", "result")
+
+   if (isNaN(result)) {
+      resultElement.innerHTML = `Answer: <strong>Undefined</strong>.`
+   } else {
+      resultElement.innerHTML = `Answer: ${resultConditioner(part)} is ${resultConditioner(
+         percent
+      )}% of <strong>${resultConditioner(result)}</strong>.`
+   }
+   backgroundElement.appendChild(resultElement)
 }
 
 function calculateFindPercent() {
    const partInput = document.querySelector("#percentageCalculator #partInput")
    const wholeInput = document.querySelector("#percentageCalculator #wholeInput")
-   const resultElement = document.querySelector("#percentageCalculator .result")
+   const backgroundElement = document.querySelector("#percentageCalculator .background")
 
-   let part = partInput.value
-   let whole = wholeInput.value
+   let part = parseFloat(partInput.value)
+   let whole = parseFloat(wholeInput.value)
    let result = (part / whole) * 100
 
-   if (isNaN(part) || isNaN(whole)) {
-      resultElement.innerHTML = ""
-      return
+   if (document.querySelector("#percentageCalculator .result")) {
+      document.querySelector("#percentageCalculator .result").remove()
    }
 
-   resultElement.innerHTML = `${resultConditioner(result)}%`
+   if (isNaN(part) || isNaN(whole)) return
+
+   let resultElement = document.createElement("div")
+   resultElement.setAttribute("class", "result")
+
+   if (isNaN(result)) {
+      resultElement.innerHTML = `Answer: <strong>Undefined</strong>.`
+   } else {
+      resultElement.innerHTML = `Answer: ${resultConditioner(part)} is <strong>${resultConditioner(
+         result
+      )}%</strong> of ${resultConditioner(whole)}.`
+   }
+   backgroundElement.appendChild(resultElement)
 }
 
 function resultConditioner(number) {
