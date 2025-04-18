@@ -9,66 +9,47 @@
 
    <body>
       <script src="script.js" defer></script>
-
       <div class="calculatorcontainer" id="percentPartCalculator">
+         <div class="title">Finding the Part</div>
          <div class="background">
             <div class="calculatorGuts">
                <div>What is</div>
                <div class="input">
-                  <input onkeyup="calculateFindPart()" id="percentInput" placeholder="X" type="number" />
+                  <input onkeyup="calculateFindPart()" id="percentInput" type="number" />
                </div>
                <div>percent of</div>
                <div class="input">
-                  <input onkeyup="calculateFindPart()" id="wholeInput" placeholder="Y" type="number" />
+                  <input onkeyup="calculateFindPart()" id="wholeInput" type="number" />
                </div>
                <div>?</div>
             </div>
          </div>
-         <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
-            Found a bug?
-            <a
-               class="ylist"
-               href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=PercentPartCalculator&amp;hide_Calculator=true"
-               target="_blank"
-               rel="noopener"
-               >Let us know!</a
-            >
-         </div>
       </div>
       <div class="calculatorcontainer" id="percentWholeCalculator">
+         <div class="title">Finding the Whole</div>
          <div class="background">
             <div class="calculatorGuts">
                <div class="input">
-                  <input onkeyup="calculateFindWhole()" id="partInput" placeholder="X" type="number" />
+                  <input onkeyup="calculateFindWhole()" id="partInput" type="number" />
                </div>
                <div>is</div>
                <div class="input">
-                  <input onkeyup="calculateFindWhole()" id="percentInput" placeholder="Y" type="number" />
+                  <input onkeyup="calculateFindWhole()" id="percentInput" type="number" />
                </div>
                <div>percent of what number?</div>
             </div>
          </div>
-         <div id="bugLink" style="text-align: center; margin-bottom: 20px; font-size: 90%">
-            Found a bug?
-            <a
-               class="ylist"
-               href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=PercentWholeCalculator&amp;hide_Calculator=true"
-               target="_blank"
-               rel="noopener"
-               >Let us know!</a
-            >
-         </div>
       </div>
       <div class="calculatorcontainer" id="percentageCalculator">
+         <div class="title">Finding the Percent</div>
          <div class="background">
             <div class="calculatorGuts">
-               <div>What percentage is</div>
                <div class="input">
-                  <input onkeyup="calculateFindPercent()" id="partInput" placeholder="X" type="number" />
+                  <input onkeyup="calculateFindPercent()" id="partInput" type="number" />
                </div>
-               <div>of</div>
+               <div>is what percentage of</div>
                <div class="input">
-                  <input onkeyup="calculateFindPercent()" id="wholeInput" placeholder="Y" type="number" />
+                  <input onkeyup="calculateFindPercent()" id="wholeInput" type="number" />
                </div>
                <div>?</div>
             </div>
